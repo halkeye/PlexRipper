@@ -5,7 +5,6 @@
         }
     ],
     "dryRun": false,
-    "repositoryUrl": "https://github.com/PlexRipper/PlexRipper",
     "preset": "angular",
     "plugins": [
         [
