@@ -31,10 +31,10 @@ jobs:
                 run: npx --prefix src/WebAPI/ClientApp/ semantic-release
                 env:
                     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                    GIT_AUTHOR_NAME: ${{ vars.GIT_AUTHOR_NAME }}
-                    GIT_AUTHOR_EMAIL: ${{ vars.GIT_AUTHOR_EMAIL }}
-                    GIT_COMMITTER_NAME: ${{ vars.GIT_COMMITTER_NAME }}
-                    GIT_COMMITTER_EMAIL: ${{ vars.GIT_COMMITTER_EMAIL }}
+                    GIT_AUTHOR_NAME: ${{ vars.GIT_AUTHOR_NAME || 'Author Name' }}
+                    GIT_AUTHOR_EMAIL: ${{ vars.GIT_AUTHOR_EMAIL || 'noreply@github.com' }}
+                    GIT_COMMITTER_NAME: ${{ vars.GIT_COMMITTER_NAME || 'Author Name' }}
+                    GIT_COMMITTER_EMAIL: ${{ vars.GIT_COMMITTER_EMAIL || 'noreply@github.com' }}
         outputs:
             new-release-published: ${{ steps.get-next-version.outputs.new-release-published }}
             new-release-version: ${{ steps.get-next-version.outputs.new-release-version }}
