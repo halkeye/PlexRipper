@@ -1,5 +1,12 @@
 PlexRipper Changelog
 
+# [0.31.0](https://github.com/halkeye/PlexRipper/compare/v0.30.0...v0.31.0) (2025-01-19)
+
+
+### Features
+
+* empty commit to trigger ([0aaa39f](https://github.com/halkeye/PlexRipper/commit/0aaa39feb7d99b9067d6930c0df704447312b310))
+
 # [0.30.0](https://github.com/halkeye/PlexRipper/compare/v0.29.1...v0.30.0) (2025-01-19)
 
 
