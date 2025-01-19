@@ -16,7 +16,7 @@ jobs:
             -   name: Checkout source code
                 uses: actions/checkout@v4
                 with:
-                    token: ${{ secrets.GH_TOKEN }}
+                    token: ${{ secrets.GITHUB_TOKEN }}
                     fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
             # This is required to be able to run semantic-release
             -   name: Setup Node.js
@@ -30,7 +30,7 @@ jobs:
                 id: get-next-version
                 run: npx --prefix src/WebAPI/ClientApp/ semantic-release
                 env:
-                    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+                    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     GIT_AUTHOR_NAME: ${{ vars.GIT_AUTHOR_NAME }}
                     GIT_AUTHOR_EMAIL: ${{ vars.GIT_AUTHOR_EMAIL }}
                     GIT_COMMITTER_NAME: ${{ vars.GIT_COMMITTER_NAME }}
@@ -49,7 +49,7 @@ jobs:
             -   name: Checkout source code
                 uses: actions/checkout@v4
                 with:
-                    token: ${{ secrets.GH_TOKEN }}
+                    token: ${{ secrets.GITHUB_TOKEN }}
                     fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
 
             -   name: Get latest version tag
