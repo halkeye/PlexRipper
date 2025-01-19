@@ -89,12 +89,14 @@ jobs:
                 id: meta
                 uses: docker/metadata-action@v5
                 with:
+                    labels: |
+                        org.opencontainers.image.authors=PlexRipper
+                        org.opencontainers.image.vendor=PlexRipper
                     images: |
                         name=plexripper/plexripper,enable=${{ github.repository_owner == 'PlexRipper' }}
                         name=ghcr.io/${{ github.repository }},enable=${{ github.repository_owner != 'PlexRipper' }}
                     tags: |
-                        type=raw,value=latest
-                        type=raw,value=${{ env.VERSION_NO_V }}
+                        type=semver,pattern={{version}},value=${{ env.VERSION_NO_V }}
 
             -   name: Build and push
                 uses: docker/build-push-action@v6
